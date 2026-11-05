@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>計票管理後台｜臺南市議員第十一選區選舉</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="admin-page">
+    <div class="admin-background" aria-hidden="true"></div>
+
+    <header class="admin-header">
+      <a class="admin-brand" href="/" aria-label="返回公開計票頁">
+        <span class="brand-mark brand-mark--small" aria-hidden="true">
+          <span>票</span>
+        </span>
+        <span>
+          <strong>即時計票管理台</strong>
+          <small>臺南市議員第十一選區選舉</small>
+        </span>
+      </a>
+      <div id="header-actions" class="admin-header__actions" hidden>
+        <span id="admin-mode" class="mode-chip">本機預覽</span>
+        <a class="text-button" href="/" target="_blank" rel="noopener">
+          查看公開頁
+        </a>
+        <button id="logout-button" class="text-button" type="button">
+          登出
+        </button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section id="boot-view" class="auth-card" aria-live="polite">
+        <span class="loading-ring loading-ring--large" aria-hidden="true"></span>
+        <p>正在檢查登入狀態</p>
+      </section>
+
+      <section id="login-view" class="auth-card" hidden>
+        <p class="section-kicker">ADMIN ACCESS</p>
+        <h1>進入計票後台</h1>
+        <p class="auth-card__intro">
+          依照活動流程輸入即時票數。所有公開頁面只可讀取資料，不會開放修改權限。
+        </p>
+
+        <form id="login-form" class="login-form">
+          <label>
+            <span>管理員電子郵件</span>
+            <input
+              id="login-email"
+              name="email"
+              type="email"
+              autocomplete="username"
+              placeholder="admin@example.com"
+              required
+            />
+          </label>
+          <label>
+            <span>密碼</span>
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              minlength="6"
+              required
+            />
+          </label>
+          <p id="login-error" class="form-error" role="alert"></p>
+          <button id="login-submit" class="primary-button" type="submit">
+            登入後台
+          </button>
+        </form>
+
+        <div id="demo-login" class="demo-login" hidden>
+          <div class="demo-login__icon" aria-hidden="true">DEV</div>
+          <div>
+            <strong>目前是本機預覽模式</strong>
+            <p>
+              尚未設定 Supabase。你可以先測試後台計票與即時排序，資料只會保存在本機瀏覽器。
+            </p>
+          </div>
+          <button id="demo-login-button" class="primary-button" type="button">
+            進入預覽後台
+          </button>
+        </div>
+      </section>
+
+      <section id="dashboard-view" class="dashboard" hidden>
+        <div class="dashboard-heading">
+          <div>
+            <p class="section-kicker">LIVE CONTROL</p>
+            <h1>候選人票數管理</h1>
+            <p>修改後會自動同步至公開頁；同票時依號次排序。</p>
+          </div>
+          <div class="dashboard-summary">
+            <div>
+              <span>目前總票數</span>
+              <strong id="admin-total-votes">0</strong>
+            </div>
+            <div>
+              <span>目前領先</span>
+              <strong id="admin-leader">--</strong>
+            </div>
+            <div class="dashboard-summary__elected">
+              <span>當選標記</span>
+              <strong id="admin-elected-count">0 / 6</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-toolbar">
+          <p id="admin-sync-status">
+            <span class="connection-dot" aria-hidden="true"></span>
+            <span id="admin-sync-label">準備載入</span>
+          </p>
+          <p>每筆操作皆會留下修改記錄</p>
+        </div>
+
+        <div id="admin-candidate-list" class="admin-candidate-list"></div>
+
+        <section class="activity-panel">
+          <div class="activity-panel__heading">
+            <h2>最近操作</h2>
+            <button id="refresh-button" class="text-button" type="button">
+              重新整理
+            </button>
+          </div>
+          <div id="activity-list" class="activity-list">
+            <p class="empty-state">尚無操作記錄</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="admin-footer">
+      <span>計票資料更新後，公開頁會在數秒內自動同步。</span>
+      <span>請勿將後台網址提供給一般觀眾。</span>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="/js/config.js"></script>
+    <script type="module" src="/js/admin-page.js"></script>
+  </body>
+</html>

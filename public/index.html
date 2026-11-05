@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
+    <meta
+      name="description"
+      content="臺南市議員第十一選區選舉即時計票結果"
+    />
+    <title>臺南市議員第十一選區選舉｜即時計票</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="public-page">
+    <a class="skip-link" href="#results">跳至開票結果</a>
+
+    <div class="page-atmosphere" aria-hidden="true">
+      <span class="atmosphere-line atmosphere-line--one"></span>
+      <span class="atmosphere-line atmosphere-line--two"></span>
+    </div>
+
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-top">
+          <div class="brand-mark" aria-hidden="true">
+            <span>票</span>
+          </div>
+          <p class="eyebrow">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span id="broadcast-mode">LIVE 即時開票</span>
+          </p>
+        </div>
+        <div class="brand-copy">
+          <h1 id="event-name">臺南市議員第十一選區選舉</h1>
+        </div>
+      </div>
+
+      <div class="header-metrics" aria-label="計票摘要">
+        <div class="metric metric--updated">
+          <span>最後更新</span>
+          <time id="last-updated">--:--:--</time>
+        </div>
+        <div class="metric metric--total">
+          <span>目前總票數</span>
+          <strong id="total-votes">0</strong>
+        </div>
+      </div>
+    </header>
+
+    <main id="results" class="results">
+      <div class="results-heading">
+        <div>
+          <p class="section-kicker">LIVE RESULTS</p>
+          <div class="results-title-row">
+            <h2>候選人即時票數</h2>
+            <span class="seat-chip">應選 <strong>6</strong> 名</span>
+          </div>
+        </div>
+        <p id="connection-status" class="connection-status" data-state="connecting">
+          <span class="connection-dot" aria-hidden="true"></span>
+          <span id="connection-label">連線中</span>
+        </p>
+      </div>
+
+      <div
+        id="candidate-list"
+        class="candidate-list"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <div class="loading-panel">
+          <span class="loading-ring" aria-hidden="true"></span>
+          正在載入計票資料
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>票數由選務工作人員即時輸入，依票數高低自動排序。</p>
+      <p id="data-mode" class="data-mode">資料連線準備中</p>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="/js/config.js"></script>
+    <script type="module" src="/js/public-page.js"></script>
+  </body>
+</html>

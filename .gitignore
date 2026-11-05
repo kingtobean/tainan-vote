@@ -1,0 +1,6 @@
+source-assets/
+.DS_Store
+Thumbs.db
+desktop.ini
+.wrangler/
+output/
