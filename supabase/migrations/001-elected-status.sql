@@ -99,8 +99,8 @@ begin
 
       select count(*)
         into v_elected_count
-        from public.candidates
-       where is_elected;
+        from public.candidates as elected_candidate
+       where elected_candidate.is_elected;
 
       if v_elected_count >= 6 then
         raise exception '最多只能標記六位候選人當選。'
@@ -108,10 +108,10 @@ begin
       end if;
     end if;
 
-    update public.candidates
+    update public.candidates as target_candidate
        set is_elected = p_is_elected,
            updated_at = now()
-     where id = p_candidate_id;
+     where target_candidate.id = p_candidate_id;
 
     insert into public.vote_logs (
       request_id,
