@@ -211,7 +211,7 @@ async function run() {
   const edgePath = await findEdge();
   await mkdir(outputDirectory, { recursive: true });
   const profileDirectory = await mkdtemp(path.join(outputDirectory, "edge-smoke-"));
-  const debugPort = 9333;
+  const debugPort = 9444;
   const browser = spawn(
     edgePath,
     [
@@ -248,7 +248,7 @@ async function run() {
     });
 
     await setViewport(client, 1920, 1080);
-    await client.send("Page.navigate", { url: "http://localhost:4173/" });
+    await client.send("Page.navigate", { url: "http://localhost:4173/?demo=1" });
     await waitForDocument(client);
     await waitFor(async () => {
       const count = await client.evaluate(
@@ -275,7 +275,7 @@ async function run() {
     await capture(client, "smoke-public-mobile.png");
 
     await setViewport(client, 1440, 1000);
-    await client.send("Page.navigate", { url: "http://localhost:4173/admin.html" });
+    await client.send("Page.navigate", { url: "http://localhost:4173/admin.html?demo=1" });
     await waitForDocument(client);
     await waitFor(async () =>
       client.evaluate(
@@ -404,7 +404,7 @@ async function run() {
     await capture(client, "smoke-admin-mobile.png");
 
     await setViewport(client, 1920, 1080);
-    await client.send("Page.navigate", { url: "http://localhost:4173/" });
+    await client.send("Page.navigate", { url: "http://localhost:4173/?demo=1" });
     await waitForDocument(client);
     const reordered = await waitFor(async () => {
       const result = await client.evaluate(`(() => {

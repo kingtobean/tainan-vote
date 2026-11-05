@@ -29,6 +29,8 @@ python -m http.server 4173 --directory public
 
 未填寫 Supabase 設定時，後台會顯示「進入預覽後台」。預覽票數保存在瀏覽器 `localStorage`，可用兩個分頁同時測試即時換位。預覽頁的初始票數僅供版面及流程測試，頁面會清楚標示「非正式票數」。
 
+已設定正式資料庫時，仍可使用 `?demo=1` 強制進入本機預覽模式，例如 `http://localhost:4173/?demo=1`；正式公開頁請使用不帶參數的網址。
+
 ## 啟用正式資料庫
 
 1. 建立 Supabase 專案。

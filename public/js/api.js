@@ -271,7 +271,10 @@ export class VoteApi {
       .replace(/\/+$/, "");
     this.anonKey = String(this.config.supabaseAnonKey || "").trim();
     this.session = null;
-    this.isDemo = !this.supabaseUrl || !this.anonKey;
+    this.isDemo =
+      new URLSearchParams(window.location.search).get("demo") === "1" ||
+      !this.supabaseUrl ||
+      !this.anonKey;
   }
 
   get modeLabel() {
