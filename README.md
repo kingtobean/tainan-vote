@@ -2,6 +2,15 @@
 
 單場活動用的即時計票網站。公開頁依照票數自動排序；管理員登入後可即時加票、減票或直接修正總票數。專案不使用前端第三方依賴，可以直接部署為靜態網站。
 
+## 正式環境
+
+- 公開計票頁：<https://tainan-vote.pages.dev/>
+- 管理後台：<https://tainan-vote.pages.dev/admin.html>
+- 靜態網站：Cloudflare Pages
+- 資料庫：Supabase `Southeast Asia (Singapore)`
+
+GitHub `main` 分支更新後會由 Cloudflare Pages 自動重新建置與部署。
+
 ## 目前功能
 
 - 公開頁顯示排名、號次、照片、姓名及即時票數
