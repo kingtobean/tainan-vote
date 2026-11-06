@@ -15,7 +15,7 @@ values
   (6, '許又仁', '/assets/candidates/06.webp', '#9a514b', 0),
   (7, '陳皇宇', '/assets/candidates/07.webp', '#3f9b70', 0),
   (8, '郭鴻儀', '/assets/candidates/08.webp', '#3f9b70', 0),
-  (9, '鄭佳欣', '/assets/candidates/09.webp', '#3f9b70', 0)
+  (9, '鄭佳欣', '/assets/candidates/09-v2.webp', '#3f9b70', 0)
 on conflict (ballot_no) do update
 set
   name = excluded.name,

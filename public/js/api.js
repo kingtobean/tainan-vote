@@ -73,7 +73,7 @@ const candidatesSeed = [
     id: "demo-09",
     ballot_no: 9,
     name: "鄭佳欣",
-    photo_path: "/assets/candidates/09.webp",
+    photo_path: "/assets/candidates/09-v2.webp",
     theme_color: "#3f9b70",
     votes: 2890,
   },

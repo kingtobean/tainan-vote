@@ -12,7 +12,9 @@ create table if not exists public.candidates (
   id uuid primary key default extensions.gen_random_uuid(),
   ballot_no integer not null unique check (ballot_no between 1 and 99),
   name text not null check (char_length(name) between 1 and 40),
-  photo_path text not null check (photo_path ~ '^/assets/candidates/[0-9]{2}\.webp$'),
+  photo_path text not null
+    constraint candidates_photo_path_check
+    check (photo_path ~ '^/assets/candidates/[0-9]{2}(-v[0-9]+)?\.webp$'),
   theme_color text not null default '#0f766e'
     check (theme_color ~ '^#[0-9a-fA-F]{6}$'),
   votes integer not null default 0 check (votes between 0 and 999999),
