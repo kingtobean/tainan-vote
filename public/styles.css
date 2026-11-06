@@ -414,9 +414,10 @@ img {
 .candidate-list {
   display: grid;
   flex: 1;
-  grid-template-rows: repeat(var(--candidate-count, 9), minmax(64px, 1fr));
+  grid-template-rows: repeat(var(--candidate-count, 9), 82px);
+  align-content: space-between;
   gap: clamp(7px, 0.9vh, 11px);
-  min-height: calc(var(--candidate-count, 9) * 64px + 70px);
+  min-height: calc(var(--candidate-count, 9) * 82px + 56px);
 }
 
 .loading-panel {
@@ -1767,7 +1768,7 @@ img {
   }
 
   .candidate-list {
-    grid-template-rows: repeat(var(--candidate-count, 9), minmax(75px, auto));
+    grid-template-rows: repeat(var(--candidate-count, 9), 82px);
   }
 
   .vote-cell strong {
