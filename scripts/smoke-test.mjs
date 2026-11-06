@@ -262,6 +262,7 @@ async function run() {
       [1920, 1080],
       [1440, 1080],
       [1100, 1080],
+      [1366, 768],
     ];
     const publicMetrics = [];
     for (const [width, height] of desktopWidths) {

@@ -1837,35 +1837,159 @@ img {
   }
 }
 
-@media (max-height: 800px) and (min-width: 821px) {
+@media (max-height: 980px) and (min-width: 821px) {
+  .public-page {
+    height: 100vh;
+    height: 100dvh;
+  }
+
   .site-header {
-    min-height: 96px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    min-height: 84px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .brand {
+    gap: 3px;
+  }
+
+  .brand-top {
+    gap: 8px;
   }
 
   .brand-mark {
-    width: 32px;
-    height: 32px;
-    font-size: 15px;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .brand-mark::after {
+    inset: 3px;
+    border-radius: 6px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+  }
+
+  .brand h1 {
+    font-size: clamp(1.25rem, 1.85vw, 1.8rem);
+  }
+
+  .header-metrics {
+    gap: 7px;
   }
 
   .metric {
-    padding-block: 8px;
+    min-width: 116px;
+    padding: 6px 11px;
+    border-radius: 11px;
   }
 
   .metric time,
   .metric strong {
-    font-size: 21px;
+    font-size: 18px;
+  }
+
+  .metric span {
+    font-size: 9px;
   }
 
   .results {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 8px;
+    padding-bottom: 0;
   }
 
   .results-heading {
-    margin-bottom: 9px;
+    margin-bottom: 6px;
+  }
+
+  .section-kicker {
+    margin-bottom: 2px;
+    font-size: 9px;
+  }
+
+  .results-heading h2 {
+    font-size: 17px;
+  }
+
+  .seat-chip {
+    padding: 3px 7px;
+    font-size: 9px;
+  }
+
+  .candidate-list {
+    grid-template-rows: repeat(var(--candidate-count, 9), minmax(54px, 1fr));
+    gap: 4px;
+    min-height: calc(var(--candidate-count, 9) * 54px + 32px);
+  }
+
+  .candidate-row {
+    grid-template-columns:
+      minmax(58px, 4.5vw)
+      minmax(54px, 4.5vw)
+      clamp(54px, 3.7vw, 66px)
+      minmax(0, 1fr)
+      auto;
+  }
+
+  .candidate-photo {
+    width: 44px;
+    height: 52px;
+    border-width: 1px;
+    border-radius: 8px;
+  }
+
+  .rank-cell > span {
+    font-size: 7px;
+  }
+
+  .rank-cell > strong {
+    font-size: 18px;
+  }
+
+  .ballot-cell span {
+    font-size: 7px;
+  }
+
+  .ballot-cell strong {
+    font-size: clamp(2rem, 2.8vw, 2.5rem);
+  }
+
+  .candidate-copy {
+    padding-inline: clamp(12px, 1.5vw, 22px);
+  }
+
+  .candidate-copy h3 {
+    font-size: clamp(1.2rem, 1.7vw, 1.65rem);
+  }
+
+  .vote-cell {
+    min-width: clamp(160px, 16vw, 230px);
+    gap: 6px;
+    padding-inline: clamp(14px, 1.5vw, 24px);
+  }
+
+  .vote-cell strong {
+    font-size: clamp(1.8rem, 2.6vw, 2.7rem);
+  }
+
+  .elected-stamp {
+    width: 46px;
+    height: 46px;
+    font-size: 11px;
+  }
+
+  .site-footer {
+    min-height: 32px;
+    font-size: 9px;
+  }
+}
+
+@media (max-height: 700px) and (min-width: 821px) {
+  .public-page {
+    height: auto;
   }
 }
 
