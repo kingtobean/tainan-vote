@@ -65,7 +65,7 @@ const candidatesSeed = [
     id: "demo-08",
     ballot_no: 8,
     name: "郭鴻儀",
-    photo_path: "/assets/candidates/08.webp",
+    photo_path: "/assets/candidates/08-v2.webp",
     theme_color: "#3f9b70",
     votes: 3180,
   },
